@@ -40,4 +40,4 @@
 
 ## Electives
 
-- [ ] (To be determined)
+- [ ] React
