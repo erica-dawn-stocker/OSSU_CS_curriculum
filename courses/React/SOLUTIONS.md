@@ -6,8 +6,7 @@ useEffect(() => {
 
     // Remove event listener when component unmounts
     return () => window.removeEventListener("online", handleOnline);
-    }
-, [])
+    }, []);
 ```
 
 ## 2 - Resize Listener
@@ -28,7 +27,7 @@ useEffect(() => {
     const intervalId = setInterval(() => {
         setCount(prev => prev + 1);
     }, 1000);
-    // Clear interval
+    // Clear interval when component unmounts
     return () => clearInterval(intervalId)    
 }, [])
 ```
@@ -78,10 +77,10 @@ const toggleItem = ({target}) => {
     setItems((prev) => {
         // check if selectedItem has been clicked
         if (prev.includes(selectedItem)) {
-            // if selected, remove item
+            // Remove selected item from the array
             return prev.filter(item => item !== selectedItem);
         } else {
-            // if not selected, add item
+            // Add selected item to array
             return [selectedItem, ...prev];
         }
     });
