@@ -62,6 +62,14 @@ setCart((currentCart) =>
 );
 ```
 
+## 7 - Remove Item by Index
+```
+setCart((currentCart) => {
+    // return array that excludes the clicked item
+    return currentCart.filter((_, index) => index !== clickedIndex);
+})
+```
+
 ## 9 - Toggle an Item
 ```
 const toggleItem = ({target}) => {
