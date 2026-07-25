@@ -62,7 +62,7 @@ setCart((currentCart) =>
 );
 ```
 
-## 7 - Toggle an Item
+## 9 - Toggle an Item
 ```
 const toggleItem = ({target}) => {
     const selectedItem = target.value;
