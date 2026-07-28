@@ -99,3 +99,25 @@ const handleChange = ({target}) => {
     setName(target.value);
 };
 ```
+
+## 11 - Controlling Input
+```
+// User inputs name
+// onChange calls handleChange
+// handleChange calls setName
+// React updates name
+// value={name} updates display
+
+const handleChange = ({ target }) => {
+    // Get name from input
+    setName(target.value)
+}
+
+<div>
+    <input
+        type="text"
+        value={name}
+        onChange={handleChange}
+    />
+</div>
+```
