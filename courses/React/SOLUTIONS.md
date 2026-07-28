@@ -86,3 +86,16 @@ const toggleItem = ({target}) => {
     });
 }
 ```
+
+## 10 - Event Target
+```
+const handleChange = (event) => {
+    // Get name from user input
+    setName(event.target.value);
+};
+
+// With destructuring
+const handleChange = ({target}) => {
+    setName(target.value);
+};
+```
