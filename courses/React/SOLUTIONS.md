@@ -122,9 +122,45 @@ const handleChange = ({ target }) => {
 </div>
 ```
 
-# 12 - Previous state
+## 12 - Previous state
 ```
 // Use the callback because the new state is 
 // based on the previous state
 setCount((previousCount) => previousCount + 1);
+```
+
+## 13 - Dependency Array Comparison
+* No dependency array - The effect runs after every render
+* Empty dependency array - The effect runs only on initial render
+* A dependency array containing count - The effect runs on initial render and when count changes
+
+## 14 - Structural Error
+* `intervalId` is unavailable because it is declared inside `useEffect`, so it is outside the scope of the component-level cleanup function.
+* The first `return` exits the component, so the JSX return is never reached.
+* The cleanup function belongs inside `useEffect` and must be returned from it.
+
+Corrected code:
+```
+export default function Timer() {
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setTime((previousTime) => previousTime + 1);
+    }, 1000);
+    return () => {
+        clearInterval(intervalId);
+    };
+  }, []);
+
+  return <h1>{time}</h1>;
+```
+
+## 15 - Fix Cleanup
+```
+useEffect(() => {
+    window.addEventListener("online", handleOnline);
+    // Clean up eventListener
+    return () => {
+        window.removeEventListener("online", handleOnline)
+    }
+}, [])
 ```
