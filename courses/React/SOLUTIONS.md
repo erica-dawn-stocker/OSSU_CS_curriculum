@@ -121,3 +121,10 @@ const handleChange = ({ target }) => {
     />
 </div>
 ```
+
+# 12 - Previous state
+```
+// Use the callback because the new state is 
+// based on the previous state
+setCount((previousCount) => previousCount + 1);
+```
