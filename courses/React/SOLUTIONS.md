@@ -164,3 +164,73 @@ useEffect(() => {
     }
 }, [])
 ```
+
+## 16 - Missing Return
+React does not recognize the cleanup function because it is not return from within useEffect()
+
+Corrected Code:
+```
+useEffect(() => {
+  window.addEventListener("resize", handleResize);
+
+  return () => {
+    window.removeEventListener("resize", handleResize);
+  };
+}, []);
+```
+
+## 17 - Time Scope
+```
+useEffect(() => {
+    // Start interval from inside useEffect
+    const intervalId = setInterval(() => {
+        setCount(prev => prev + 1);
+    }, 1000);
+    // Cleanup can access intervalId because
+    // it's in the same scope
+    return () => clearInterval(intervalId)    
+}, []) 
+```
+
+## 18 - Component body or effect?
+- Calculating a total from props - component body - No side effect happened
+- Starting an interval - useEffect - interfacing outside React
+- Returning JSX - component body - the component's job is to return the UI to render
+- Adding a window event listener - useEffect - it interacts with something outside React
+- Filtering an array for display - component Body - solely calculating what should be rendered
+- Updating document.title - useEffect - it changes something outside React (the browser's document)
+- Declaring an event handler - component body - Only defining a function that may be called later
+- Opening a WebSocket - useEffect - creates a connection to something outside React
+
+## 19 - Calling vs Assigning
+// Incorrect - Tries to assign a value to useEffect
+useEffect = (() => {
+  console.log("Hello");
+}, []);
+
+// Correct - is called as a function
+useEffect(() => {
+  console.log("Hello");
+}, []);
+
+## 20 - Small Timer Component
+```
+import { useState, useEffect } from "react"
+
+export default function SmallTimer() {
+    // Store the elapsed time
+    const [time, setTime] = useState(0);
+    useEffect(() => {
+        // Set time to increase by 1 every second
+        const intervalId = setInterval(() => {
+        setTime((previousTime) => previousTime + 1);
+        }, 1000);
+        // Clear interval
+        return () => {
+            clearInterval(intervalId);
+        };
+      }, [])
+    // Render elapsed time
+    return <h1>Elapsed Time: {time}</h1>;
+}
+```
