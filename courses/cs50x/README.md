@@ -14,6 +14,10 @@ CS50x: Introduction to Computer Science
 
 https://cs50.harvard.edu/x/
 
+## Supplemental Resources
+
+[Codecademy: Introduction to C](https://www.codecademy.com/learn/learn-c-introduction)
+
 ## OSSU Course Page
 
 https://cs.ossu.dev/coursepages/intro-cs/
