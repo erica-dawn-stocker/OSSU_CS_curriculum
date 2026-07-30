@@ -16,15 +16,15 @@ https://cs50.harvard.edu/x/
 
 ## Supplemental Resources
 
-[Codecademy: Introduction to C](https://www.codecademy.com/learn/learn-c-introduction)
+[Codecademy Learn C](codecademy.com/learn/paths/c)
 
 ## OSSU Course Page
 
-https://cs.ossu.dev/coursepages/intro-cs/
+[Intro to CS](https://cs.ossu.dev/coursepages/intro-cs/)
 
 ## Official Syllabus
 
-https://cs50.harvard.edu/x/syllabus/
+[CS50x Syllabus](https://cs50.harvard.edu/x/syllabus/)
 
 ## Repository Folder
 
