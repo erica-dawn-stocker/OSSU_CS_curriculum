@@ -10,9 +10,7 @@ Harvard University
 
 ## Primary Resource
 
-CS50x: Introduction to Computer Science
-
-https://cs50.harvard.edu/x/
+[CS50x: Introduction to Computer Science](https://cs50.harvard.edu/x/)
 
 ## Supplemental Resources
 
