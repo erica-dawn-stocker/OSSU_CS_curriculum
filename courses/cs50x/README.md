@@ -16,6 +16,8 @@ Harvard University
 
 [Codecademy Learn C](codecademy.com/learn/paths/c)
 
+[Codecademy Learn C skill path](https://www.codecademy.com/learn/paths/c)
+
 ## OSSU Course Page
 
 [Intro to CS](https://cs.ossu.dev/coursepages/intro-cs/)
